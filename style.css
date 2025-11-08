@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(135deg, #080808 19%, #0c2173f6 19%,  #b20231f9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.7em;
+    font-weight: bolder;
+    color: #fde8b9;
+    position: relative;
+}
+
+q {
+    position: absolute;
+    top: 385px;
+    left: 20px;
+    text-shadow: 2px 5px 2px #250f05ea;
+}
+
+span {
+    color: #df023d;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#logotipo {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    left: 12px;
+    top: 10px;
+}
+
+nav {
+    position: relative;
+    padding: 10px;
+    margin-left: 120px;
+    margin-right: 20px;
+    width: 590px;
+}
+
+#btn-info {
+    position: absolute;
+    right: 30px;
+    top: 24px;
+    cursor: pointer;
+}
+
+#btn-info:hover {
+    fill: #FC851D;
+    width: 28px;
+    height: 28px;
+}
+
+/* --- MENU --- */
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 0.9em;
+    list-style: none;
+}
+
+.menu-item {
+    padding: 2px 4px 4px 2px;
+    transition: 0.1s all ease;
+}
+
+.menu-item:hover {
+    color: #FC851D;
+    border-bottom: 3px solid #FC851D;
+}
+
+#menu li {
+    position: relative;
+}
+
+.img-svg-1 {
+    display: none;
+    fill: #FC851D;
+    position: absolute;
+    bottom: 19px;
+    right: 62px;
+}
+
+#menu li:hover .img-svg-1 {
+    display: block;
+}
+
+.btn-abrirMenu {
+    display: none;
+    transition: margin-right 1s ease;
+}
+
+.btn-abrirMenu:hover svg {
+    fill: #FC851D;
+}
+
+/* --- SIDENAV --- */
+
+#sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    gap: 35px;
+    background-color: #000000bd;
+    backdrop-filter: blur(10px);
+    list-style: none;
+    
+    z-index: 1;
+    position: fixed;
+    top: 72.8px;
+    right: 0px;
+
+    margin-right: -320px;
+    width: 320px;
+    height: 100vh;
+    transition: margin-right 0.4s;
+}
+
+.sidenav-item {
+    padding: 10px 4px 4px 0px;
+    margin-left: 25px;
+    transition: 0.1s all ease;
+}
+
+.sidenav-item:hover {
+    color: #FC851D;
+    border-bottom: 3px solid #FC851D;
+}
+
+#sidenav li {
+    width: 99px;
+    position: relative;
+}
+
+.img-svg-2 {
+    display: none;
+    fill: #FC851D;
+    position: absolute;
+    bottom: 18px;
+    left: 97px;
+}
+
+#sidenav li:hover .img-svg-2 {
+    display: block;
+}
+
+.btn-fecharMenu {
+    padding: 20px;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 40px;
+}
+
+.btn-fecharMenu:hover svg {
+    fill: #FC851D;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (max-width: 900px) { /* -- TELAS MÉDIAS -- */
+    header {
+        display: flex;
+        justify-content: flex-end;
+        background: linear-gradient(135deg, #080808 22%, #0c2173f6 22%, #b20231f9);
+    }
+
+    #logotipo {
+        left: 20px;
+        top: 6px;
+    }
+
+    main {
+        font-size: 2.3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    q {
+        top: 350px;
+        left: 20px;
+    }
+
+    #sidenav {
+        width: 250px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #btn-info {
+        top: 22px;
+        right: 100px;
+    }
+
+    .btn-abrirMenu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 680px) { /* -- TELAS PEQUENAS -- */
+    body{
+        background-position: center top;
+    }
+
+    header {
+        background: linear-gradient(135deg, #080808 30%, #b30231 30%);
+    }
+
+    q {
+        top: 350px;
+        left: 20px;
+    }
+
+    #btn-info {
+        top: 22px;
+    }
+}
+
+@media screen and (max-width: 560px) { /* -- TELAS MUITO PEQUENAS -- */
+    body{
+        background-position: center bottom;
+    }
+
+    header {
+        background: linear-gradient(135deg, #080808 35%, #b30231 35%);
+    }
+
+    main {
+        font-size: 2.4em;
+        position: relative;
+    }
+
+    q {
+        top: 350px;
+        left: 20px;
+    }
+
+    span {
+        margin-left: 21px;
+    }
+
+    #btn-info {
+        top: 22px;
+    }
+}
