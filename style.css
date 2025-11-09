@@ -41,6 +41,7 @@ header {
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0px;
+    z-index: 1000;
     padding: 20px;
 }
 
