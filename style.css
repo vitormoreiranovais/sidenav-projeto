@@ -39,6 +39,8 @@ header {
     justify-content: center;
     background: linear-gradient(135deg, var(--cor_preto1) 19%, var(--cor_azul1) 19%, var(--cor_vermelho1));
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0px;
     padding: 20px;
 }
 
