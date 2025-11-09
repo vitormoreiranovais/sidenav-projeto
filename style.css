@@ -6,6 +6,21 @@
     margin: 0px;
 }
 
+:root {
+    --cor_preto1: #080808;
+    --cor_preto2: #000000bd;
+    --cor_branco1: #fff;
+
+    --cor_vermelho1: #b20231f9;
+    --cor_vermelho2: #b30231;
+    --cor_vermelho3: #df023d;
+
+    --cor_azul1: #0c2173f6;
+    --cor_laranja1: #fc851d;
+    --cor_amarelo1: #fde8b9;
+    --cor_marrom1: #250f05ea;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -14,7 +29,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    max-width: 100vw;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -22,7 +37,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: linear-gradient(135deg, #080808 19%, #0c2173f6 19%,  #b20231f9);
+    background: linear-gradient(135deg, var(--cor_preto1) 19%, var(--cor_azul1) 19%, var(--cor_vermelho1));
     backdrop-filter: blur(10px);
     padding: 20px;
 }
@@ -31,7 +46,7 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.7em;
     font-weight: bolder;
-    color: #fde8b9;
+    color: var(--cor_amarelo1);
     position: relative;
 }
 
@@ -39,15 +54,15 @@ q {
     position: absolute;
     top: 385px;
     left: 20px;
-    text-shadow: 2px 5px 2px #250f05ea;
+    text-shadow: 2px 5px 2px var(--cor_marrom1);
 }
 
 span {
-    color: #df023d;
+    color: var(--cor_vermelho3);
 }
 
 a {
-    color: white;
+    color: var(--cor_branco1);
     text-decoration: none;
 }
 
@@ -72,10 +87,11 @@ nav {
     right: 30px;
     top: 24px;
     cursor: pointer;
+    transition: width 0.1s ease;
 }
 
 #btn-info:hover {
-    fill: #FC851D;
+    fill: var(--cor_laranja1);
     width: 28px;
     height: 28px;
 }
@@ -96,8 +112,8 @@ nav {
 }
 
 .menu-item:hover {
-    color: #FC851D;
-    border-bottom: 3px solid #FC851D;
+    color: var(--cor_laranja1);
+    border-bottom: 3px solid var(--cor_laranja1);
 }
 
 #menu li {
@@ -106,7 +122,7 @@ nav {
 
 .img-svg-1 {
     display: none;
-    fill: #FC851D;
+    fill: var(--cor_laranja1);
     position: absolute;
     bottom: 19px;
     right: 62px;
@@ -122,7 +138,7 @@ nav {
 }
 
 .btn-abrirMenu:hover svg {
-    fill: #FC851D;
+    fill: var(--cor_laranja1);
 }
 
 /* --- SIDENAV --- */
@@ -132,13 +148,13 @@ nav {
     flex-direction: column;
     justify-self: flex-end;
     gap: 35px;
-    background-color: #000000bd;
+    background-color: var(--cor_preto2);
     backdrop-filter: blur(10px);
     list-style: none;
     
     z-index: 1;
     position: fixed;
-    top: 72.8px;
+    top: 71.9px;
     right: 0px;
 
     margin-right: -320px;
@@ -154,8 +170,8 @@ nav {
 }
 
 .sidenav-item:hover {
-    color: #FC851D;
-    border-bottom: 3px solid #FC851D;
+    color: var(--cor_laranja1);
+    border-bottom: 3px solid var(--cor_laranja1);
 }
 
 #sidenav li {
@@ -165,7 +181,7 @@ nav {
 
 .img-svg-2 {
     display: none;
-    fill: #FC851D;
+    fill: var(--cor_laranja1);
     position: absolute;
     bottom: 18px;
     left: 97px;
@@ -183,96 +199,5 @@ nav {
 }
 
 .btn-fecharMenu:hover svg {
-    fill: #FC851D;
-}
-
-/* --- MEDIA QUERIES --- */
-
-@media screen and (max-width: 900px) { /* -- TELAS MÉDIAS -- */
-    header {
-        display: flex;
-        justify-content: flex-end;
-        background: linear-gradient(135deg, #080808 22%, #0c2173f6 22%, #b20231f9);
-    }
-
-    #logotipo {
-        left: 20px;
-        top: 6px;
-    }
-
-    main {
-        font-size: 2.3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    q {
-        top: 350px;
-        left: 20px;
-    }
-
-    #sidenav {
-        width: 250px;
-    }
-
-    nav {
-        display: none;
-    }
-
-    #btn-info {
-        top: 22px;
-        right: 100px;
-    }
-
-    .btn-abrirMenu {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 680px) { /* -- TELAS PEQUENAS -- */
-    body{
-        background-position: center top;
-    }
-
-    header {
-        background: linear-gradient(135deg, #080808 30%, #b30231 30%);
-    }
-
-    q {
-        top: 350px;
-        left: 20px;
-    }
-
-    #btn-info {
-        top: 22px;
-    }
-}
-
-@media screen and (max-width: 560px) { /* -- TELAS MUITO PEQUENAS -- */
-    body{
-        background-position: center bottom;
-    }
-
-    header {
-        background: linear-gradient(135deg, #080808 35%, #b30231 35%);
-    }
-
-    main {
-        font-size: 2.4em;
-        position: relative;
-    }
-
-    q {
-        top: 350px;
-        left: 20px;
-    }
-
-    span {
-        margin-left: 21px;
-    }
-
-    #btn-info {
-        top: 22px;
-    }
+    fill: var(--cor_laranja1);
 }
